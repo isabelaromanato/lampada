@@ -1,57 +1,39 @@
 "use strict" //me cobra as regras
 
-function lampadaQuebrada (){
-    const lampada = document.getElementById("lampada")
-    return lampada.src.includes("quebrada") 
+const lampada = document.getElementById("lampada")
 
+function botoesLigaDesliga (estadoLiga, estadoDesliga) {
+    const botaoLigar = document.getElementById("ligar")
+    const botaoDesligar = document.getElementById("desligar")  
+    botaoLigar.disabled = estadoLiga
+    botaoDesligar.disabled= estadoDesliga
+}
+
+function lampadaQuebrada (){
+    return lampada.src.includes("quebrada") 
     //indexOf | includes -> busca uma palavra e não o endereço todo
 }
 
 function ligarLampada() {
 
-    const lampada = document.getElementById("lampada")
-    const botaoLigar = document.getElementById("ligar")
-    const botaoDesligar = document.getElementById("desligar")  
-   
-    
-
     if (!lampadaQuebrada()) {
-   
     lampada.src = "img/ligada.jpg"
-    botaoLigar.disabled = true
-    botaoDesligar.disabled = false   
+    botoesLigaDesliga(true, false)
     }
 }
 
 function desligarLampada() {
 
-    const lampada = document.getElementById("lampada")
-   
-    
-
-    const botaoLigar = document.getElementById("ligar")
-    const botaoDesligar = document.getElementById("desligar")
-
     if (!lampadaQuebrada()) {
-
     lampada.src = "img/desligada.jpg"
-    botaoLigar.disabled = false
-    botaoDesligar.disabled = true
+    botoesLigaDesliga(false, true)
 
     }
 }
 
 function quebrarLampada () {
-
- 
-    const lampada = document.getElementById("lampada")
     lampada.src = "img/quebrada.jpg"
-
-    const botaoLigar = document.getElementById("ligar")
-    const botaoDesligar = document.getElementById("desligar")
-
-    botaoLigar.disabled = true
-    botaoDesligar.disabled = true
+    botoesLigaDesliga(true, true)
 }
 
 //eventos
