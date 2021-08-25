@@ -36,6 +36,10 @@ function quebrarLampada () {
     botoesLigaDesliga(true, true)
 }
 
+function piscarLampada () {
+    
+}
+
 //eventos
 document.getElementById('ligar')
 .addEventListener("click", ligarLampada)
@@ -51,3 +55,6 @@ document.getElementById('lampada')
 
 document.getElementById('lampada')
 .addEventListener("dblclick", quebrarLampada)
+
+//setTimeOut
+//setInterval
