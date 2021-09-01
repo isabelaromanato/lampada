@@ -14,18 +14,27 @@ function botoesLigaDesliga (estadoLiga, estadoDesliga, estadoPisca) {
     botaoPiscar.disabled = estadoPisca
 }
 
-function lampadaQuebrada (){
-    return lampada.src.includes("quebrada") 
-    //indexOf | includes -> busca uma palavra e não o endereço todo
-}
+
+// function lampadaQuebrada (){
+//     return lampada.src.includes("quebrada") 
+//     //indexOf | includes -> busca uma palavra e não o endereço todo
+// }
+const lampadaQuebrada = () => lampada.src.includes("quebrada") 
 
 function ligarLampada() {
-
     if (!lampadaQuebrada()) {
     lampada.src = "img/ligada.jpg"
     botoesLigaDesliga(true, false)
     }
 }
+
+// const ligarLampada = () => {
+//     if (!lampadaQuebrada()) {
+//     lampada.src = "img/ligada.jpg"
+//     botoesLigaDesliga(true, false)
+//     }
+
+// }
 
 function desligarLampada() {
 
@@ -36,12 +45,24 @@ function desligarLampada() {
     }
 }
 
+// const desligarLampada = () => {
+//     if (!lampadaQuebrada()) {
+//     lampada.src = "img/desligada.jpg"
+//     botoesLigaDesliga(false, true)
+//     }
+// }
+
 function quebrarLampada () {
     lampada.src = "img/quebrada.jpg"
     botoesLigaDesliga(true, true, true)
 }
 
-function pararPiscar() {
+// const quebrarLampada = () => {
+//     lampada.src = "img/quebrada.jpg"
+//    botoesLigaDesliga(true, true, true)
+// }
+
+const pararPiscar = () => {
     clearInterval(idLigar)
     clearInterval(idDesligar)
 }
@@ -82,3 +103,5 @@ document.getElementById('piscar')
 
 //setTimeOut
 //setInterval
+
+//as funções comentadas testamos a metodologia "Arrow Function"
