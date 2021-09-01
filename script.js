@@ -5,11 +5,13 @@ let idLigar
 
 const lampada = document.getElementById("lampada")
 
-function botoesLigaDesliga (estadoLiga, estadoDesliga) {
+function botoesLigaDesliga (estadoLiga, estadoDesliga, estadoPisca) {
     const botaoLigar = document.getElementById("ligar")
-    const botaoDesligar = document.getElementById("desligar")  
+    const botaoDesligar = document.getElementById("desligar") 
+    const botaoPiscar = document.getElementById ("piscar") 
     botaoLigar.disabled = estadoLiga
     botaoDesligar.disabled= estadoDesliga
+    botaoPiscar.disabled = estadoPisca
 }
 
 function lampadaQuebrada (){
@@ -36,7 +38,7 @@ function desligarLampada() {
 
 function quebrarLampada () {
     lampada.src = "img/quebrada.jpg"
-    botoesLigaDesliga(true, true)
+    botoesLigaDesliga(true, true, true)
 }
 
 function pararPiscar() {
