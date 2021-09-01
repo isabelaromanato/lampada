@@ -1,5 +1,8 @@
 "use strict" //me cobra as regras
 
+let idDesligar
+let idLigar
+
 const lampada = document.getElementById("lampada")
 
 function botoesLigaDesliga (estadoLiga, estadoDesliga) {
@@ -36,9 +39,25 @@ function quebrarLampada () {
     botoesLigaDesliga(true, true)
 }
 
-function piscarLampada () {
-    
+function pararPiscar() {
+    clearInterval(idLigar)
+    clearInterval(idDesligar)
 }
+
+function piscar () {
+    const botaoPiscar = document.getElementById("piscar")
+    if (botaoPiscar.textContent == "Piscar") {
+    idLigar = setInterval(ligarLampada, 500)
+    idDesligar = setInterval (desligarLampada, 1000)
+    botaoPiscar.textContent = "Parar" 
+    } else {
+    pararPiscar ()
+    botaoPiscar.textContent= "Piscar"
+
+}
+}
+
+
 
 //eventos
 document.getElementById('ligar')
@@ -55,6 +74,9 @@ document.getElementById('lampada')
 
 document.getElementById('lampada')
 .addEventListener("dblclick", quebrarLampada)
+
+document.getElementById('piscar')
+.addEventListener("click", piscar)
 
 //setTimeOut
 //setInterval

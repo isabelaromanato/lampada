@@ -10,6 +10,6 @@ O projeto consiste em criar uma lâmpada que tenha três ações:
 
 Todo o código foi construído seguindo as boas práticas, como responsabilidade única e funções puras.
 
-![](img/projeto.PNG)
+![](img/projetolamp.PNG)
 
 
