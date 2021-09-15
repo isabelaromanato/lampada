@@ -74,12 +74,14 @@ function piscar () {
     idDesligar = setInterval (desligarLampada, 1000)
     botaoPiscar.textContent = "Parar"
     botaoPiscar.classList.add('red')
+    botaoPiscar.classList.remove('green')
     
    
     } else {
     pararPiscar ()
     botaoPiscar.textContent= "Piscar"
     botaoPiscar.classList.add('green')
+    botaoPiscar.classList.remove('red')
 
 }
 }
